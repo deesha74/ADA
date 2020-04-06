@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x,y,mul=1;
+	cout<<"Enter value for x: ";
+	cin>>x;
+	cout<<"Power y: ";
+	cin>>y;
+	for(int i=0;i<y;i++)
+	{
+		mul=mul*x;
+	}
+	cout<<"x to the power y: "<<mul;
+	return 0;
+}
