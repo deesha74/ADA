@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int linsearch(int a[],int size,int i,int x)
+{
+	if(a[i]==x) return i;
+	else return -1;
+	linsearch(a,size,i++,x);
+}
+int main()
+{
+	int a[20],i,size,x,c;
+	cout<<"Enter array size: ";
+	cin>>size;
+	cout<<"Array elements: ";
+	for(i=0;i<size;i++)
+	{
+		cin>>a[i];
+	}
+	cout<<"\n\nEnter element to search: ";
+	cin>>x;
+	linsearch(a,size,i,x);
+	cout<<"Element found";
+	
+	return 0;
+}
