@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int Power(int x, int y)
+{
+	if(y==1) return x;
+	int t=Power(x,y/2);
+	if(y%2==0)
+	{
+		t=t*t;
+	}
+	else
+	{
+		t=t*t*x;
+	}
+	return t;
+}
+int main()
+{
+	int x,y;
+	cout<<"Enter value for x: ";
+	cin>>x;
+	cout<<"Power y: ";
+	cin>>y;
+	if(x==0) cout<<"0";
+	else if(y==0) cout<<"1";
+	else if(y==1 || x==1) cout<<x;
+	else cout<<Power(x,y);
+	
+	return 0;
+}
