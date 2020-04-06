@@ -1,0 +1,57 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+struct job
+{
+	char id;
+	int d;
+	float p;
+};
+bool cmp(job x,job y)
+{
+	return x.p>y.p;
+}
+jobseq(job a[],int n)
+{
+	int i,j,pro=0;
+	bool slot[n];
+	for(i=0;i<=n-1;i++)
+	{
+		slot[i]=false;
+	}
+	char result[n];
+	for(i=0;i<=n-1;i++)
+	{
+		j=a[i].d-1;
+		while(j>=0)
+		{
+			if(slot[j]==false)
+			{
+				slot[j]=true;
+				result[j]=a[i].id;
+				pro =pro+a[i].p;
+			}
+			j--;
+		}
+	}
+	cout<<"OPTIMAL SOLUTION \nMaximum Profit: "<<pro;
+}
+int main()
+{
+	int n,i,p,w,pw;
+	cout<<"Enter the number of objects: ";
+	cin>>n;
+	job a[n];
+	
+	for(i=0;i<=n-1;i++)
+	{
+		cout<<"Enter id, profit and deadline\n";
+		cin>>a[i].id;
+		cin>>a[i].d;
+		cin>>a[i].p;
+	}
+	sort(a,a+n,cmp);
+	jobseq(a,n);
+	
+	return 0;
+}
