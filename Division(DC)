@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int divide(int x,int y)
+{
+	while(x>y)
+	{
+		if(x%2==1)  return (divide(x/2,y)+1);
+		
+	    else return (divide(x/2,y));
+	}
+}
+int main()
+{
+	int x,y;
+	cout<<"Enter values for x and y(keep x>y): ";
+	cin>>x>>y;
+	if(x<y || y==0)
+	{
+		cout<<"Enter values as such x>y and y is not 0\n";
+		cout<<"Enter values for x and y(keep x>y): ";
+		cin>>x>>y;
+	}
+	cout<<"Quotient: "<<divide(x,y);
+	return 0;
+}
