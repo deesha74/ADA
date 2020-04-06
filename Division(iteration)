@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x,y,c=0;
+	cout<<"Enter values for x and y(keep x>y): ";
+	cin>>x>>y;
+	if(x<y || y==0)
+	{
+		cout<<"Enter values as such x>y and y is not 0\n";
+		cout<<"Enter values for x and y(keep x>y): ";
+		cin>>x>>y;
+	}
+	
+	while(x!=0)
+	{
+		x=x-y;
+		c++;
+	}
+	cout<<"Quotient: "<<c<<"\nRemainder: "<<x;
+	return 0;
+}
