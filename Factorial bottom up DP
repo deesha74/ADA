@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+// Tabulated version to find factorial n.
+// Bottom up
+int F[100]; 
+int fact(int n) 
+{ 
+    F[0]=1; // base case
+    for (int i = 1; i<=n; i++) 
+    { 
+	    F[i] = F[i-1] * i;
+    } 
+    return F[n]; 
+}
+
+int main() {
+   	int n;
+      	cout<<"Enter a number: ";
+      	cin>>n;
+      	cout<<"Factorial is: "<<fact(n);
+   	return 0;
+}
